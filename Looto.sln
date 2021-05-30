@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Looto", "Looto\Looto.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Looto.Tests", "Looto.Tests\Looto.Tests.csproj", "{B2686F3E-09CE-4539-9C63-52ECDF13FA3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaltwaterTaffy", "SaltwaterTaffy\SaltwaterTaffy.csproj", "{718DBA7E-6513-4165-B3D6-9815B4083BAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B2686F3E-09CE-4539-9C63-52ECDF13FA3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2686F3E-09CE-4539-9C63-52ECDF13FA3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2686F3E-09CE-4539-9C63-52ECDF13FA3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{718DBA7E-6513-4165-B3D6-9815B4083BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{718DBA7E-6513-4165-B3D6-9815B4083BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{718DBA7E-6513-4165-B3D6-9815B4083BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{718DBA7E-6513-4165-B3D6-9815B4083BAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

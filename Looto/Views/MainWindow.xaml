@@ -40,7 +40,7 @@
                                FontSize="{StaticResource Small}"
                                Margin="10, 0, 0, 0"
                                VerticalAlignment="Center"
-                               Text="Looto - port scanner"/>
+                               Text="MTA_Scanner"/>
                 </StackPanel>
                 
                 <Grid Grid.Column="1">
@@ -263,11 +263,11 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <TextBox Style="{StaticResource StandartTextBox}"
-                                     Text="{Binding FromTcpPort}"
+                                     Text="{Binding FromTcpPort, UpdateSourceTrigger=PropertyChanged}"
                                      Margin="240, 0, 25, 10"
                                      Tag="From TCP port"/>
                             <TextBox Style="{StaticResource StandartTextBox}"
-                                     Text="{Binding ToTcpPort}"
+                                     Text="{Binding ToTcpPort , UpdateSourceTrigger=PropertyChanged}"
                                      Grid.Column="1"
                                      Margin="25, 0, 240, 10"
                                      Tag="To TCP port"/>
@@ -284,11 +284,11 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBox Style="{StaticResource StandartTextBox}"
-                                         Text="{Binding FromUdpPort}"
+                                         Text="{Binding FromUdpPort , UpdateSourceTrigger=PropertyChanged}"
                                          Margin="240, 0, 25, 10"
                                          Tag="From UDP port"/>
                                 <TextBox Style="{StaticResource StandartTextBox}"
-                                         Text="{Binding ToUdpPort}"
+                                         Text="{Binding ToUdpPort , UpdateSourceTrigger=PropertyChanged}"
                                          Grid.Column="1"
                                          Margin="25, 0, 240, 10"
                                          Tag="To UDP port"/>
@@ -302,7 +302,7 @@
                     <TextBlock FontFamily="{StaticResource BaseFont}"
                                FontSize="{StaticResource Small}"
                                Foreground="{StaticResource RedBrush}"
-                               Visibility="{Binding IsWrongInput, Converter={StaticResource VisibilityConverter}}"
+                               Visibility="{Binding IsWrongInput, Converter={StaticResource VisibilityConverter} , UpdateSourceTrigger=PropertyChanged}"
                                TextAlignment="Center"
                                Text="Wrong input!"/>
                     <ProgressBar Foreground="{StaticResource PropgressBrush}"
@@ -315,7 +315,7 @@
                     <Button Style="{StaticResource ButtonStyle}"
                             FontSize="{StaticResource Regular}"
                             Command="{Binding Scan}"
-                            IsEnabled="{Binding IsScanButtonEnabled}"
+                            IsEnabled="{Binding IsScanButtonEnabled , UpdateSourceTrigger=PropertyChanged}"
                             Visibility="{Binding IsShowScanButton, Converter={StaticResource VisibilityConverter}}"
                             Width="200"
                             Margin="25"
@@ -341,7 +341,7 @@
                            VerticalAlignment="Bottom"
                            TextAlignment="Right"
                            Margin="5"
-                           Text="Destry.Unimaster - v1.1.0"/>
+                           Text="Scanner_MTA"/>
             </Grid>
         </StackPanel>
     </Border>

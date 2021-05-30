@@ -120,6 +120,7 @@
                 <Button Style="{StaticResource ButtonStyle}"
                         FontSize="{StaticResource Regular}"
                         Command="{Binding OpenGithub}"
+                        Visibility="Hidden"
                         Content="Write bug report in the GitHub repo"
                         Width="350"
                         Margin="5"/>

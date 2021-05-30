@@ -14,19 +14,29 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
             <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="7*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-
         <TextBlock x:Name="Host"
                    Text="192.168.0.0"
                    TextAlignment="Center"
                    VerticalAlignment="Center"
                    Foreground="{StaticResource WhiteBrush}"
                    FontFamily="{StaticResource BaseFont}"
-                   FontSize="{StaticResource Regular}"/>
+                   FontSize="{StaticResource Regular}"
+                   TextWrapping="Wrap"/>
 
-        <TextBlock x:Name="Time"
+        <TextBlock x:Name="OS"
                    Grid.Column="1"
+                   Text="OS"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="{StaticResource WhiteBrush}"
+                   FontFamily="{StaticResource BaseFont}"
+                   FontSize="{StaticResource Regular}"
+                   TextWrapping="Wrap"/>
+        <TextBlock x:Name="Time"
+                   Grid.Column="2"
                    Text="2 days ago."
                    TextAlignment="Center"
                    VerticalAlignment="Center"
@@ -38,7 +48,7 @@
                 FontSize="{StaticResource Regular}"
                 x:Name="ApplyButton"
                 Click="ApplyButton_Click"
-                Grid.Column="2"
+                Grid.Column="3"
                 Margin="3"
                 Content="Apply"/>
 

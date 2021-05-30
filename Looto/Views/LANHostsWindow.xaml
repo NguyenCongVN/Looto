@@ -130,6 +130,7 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="7*"/>
                                         <ColumnDefinition Width="7*"/>
+                                        <ColumnDefinition Width="7*"/>
                                         <ColumnDefinition Width="3*"/>
                                     </Grid.ColumnDefinitions>
 
@@ -141,6 +142,13 @@
                                                FontSize="{StaticResource Regular}"/>
 
                                     <TextBlock Grid.Column="1"
+                                               Text="OS"
+                                               TextAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Foreground="{StaticResource WhiteBrush}"
+                                               FontFamily="{StaticResource BaseFont}"
+                                               FontSize="{StaticResource Regular}"/>
+                                    <TextBlock Grid.Column="2"
                                                Text="Last scanned"
                                                TextAlignment="Center"
                                                VerticalAlignment="Center"

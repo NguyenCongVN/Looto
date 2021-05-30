@@ -24,8 +24,21 @@ namespace Looto.Components
 
 
 
-        /// <summary>Host text.</summary>
+        /// <summary>OS text.</summary>
         public string HostText
+        {
+            get => (string)GetValue(OSTextProperty);
+            set { SetValue(OSTextProperty, value); }
+        }
+
+        /// <summary>DP for <see cref="OSText"/> property.</summary>
+        public static readonly DependencyProperty OSTextProperty =
+            DependencyProperty.Register("OSText", typeof(string), typeof(HostInfo), new PropertyMetadata(string.Empty));
+
+
+
+        /// <summary>OS text.</summary>
+        public string OSText
         {
             get => (string)GetValue(HostTextProperty);
             set { SetValue(HostTextProperty, value); }
@@ -34,7 +47,6 @@ namespace Looto.Components
         /// <summary>DP for <see cref="HostText"/> property.</summary>
         public static readonly DependencyProperty HostTextProperty =
             DependencyProperty.Register("HostText", typeof(string), typeof(HostInfo), new PropertyMetadata(string.Empty));
-
 
 
 
@@ -88,6 +100,7 @@ namespace Looto.Components
             }
 
             Host.Text = HostText;
+            OS.Text = OSText;
             Time.Text = TimeText;
         }
 

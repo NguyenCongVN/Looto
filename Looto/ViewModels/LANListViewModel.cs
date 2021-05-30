@@ -57,7 +57,7 @@ namespace Looto.ViewModels
         #endregion
 
         /// <summary>Calls, when one host was checked.</summary>
-        public event Action<string> OnHostFinded;
+        public event Action<HostData> OnHostFinded;
 
 
         /// <summary>Create new view model for view.</summary>
@@ -82,7 +82,7 @@ namespace Looto.ViewModels
         {
             // Render only if host exists.
             if (hostData.Exists)
-                OnHostFinded?.Invoke(hostData.Host);
+                OnHostFinded?.Invoke(hostData);
 
             // Progress bar stats.
             MaxSearchProgress = dest;

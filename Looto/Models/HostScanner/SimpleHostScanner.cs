@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using SaltwaterTaffy;
+using SaltwaterTaffy.Container;
 
 namespace Looto.Models.HostScanner
 {
@@ -58,6 +61,20 @@ namespace Looto.Models.HostScanner
                             host.Exists = HostChecker.CheckHost(host.Host, _config);
                         else host.Exists = false;
 
+                        // try scanning os of host
+                        if (host.Exists)
+                        {
+                            var target = new Target(host.Host);
+                            var scanner = new Scanner(target);
+                            scanner.PersistentOptions = new NmapOptions {
+                                NmapFlag.OsDetection
+                            };
+                            var hostOsDiscovery = scanner.HostDiscovery();
+                            Os resultOsDiscovery = hostOsDiscovery.First().OsMatches.First();
+                            host.OS =
+                                $"{resultOsDiscovery.Name} ({resultOsDiscovery.Family} {resultOsDiscovery.Generation}) [{resultOsDiscovery.Certainty}]";
+                            //Console.WriteLine($"{resultOsDiscovery.Name} ({resultOsDiscovery.Family} {resultOsDiscovery.Generation}) [{resultOsDiscovery.Certainty}]");
+                        }
                         result.Add(host);
                         _scannedHosts++;
                         OnOneHostWasScanned?.Invoke(HostsCount, _scannedHosts, host);

@@ -5,6 +5,7 @@ using Looto.ViewModels;
 using System;
 using System.Linq;
 using System.Windows;
+using Looto.Models.HostScanner;
 
 namespace Looto.Views
 {
@@ -68,13 +69,14 @@ namespace Looto.Views
 
         /// <summary>Calls when finded available LAN host, then new component will be rendered in the StackPanel.</summary>
         /// <param name="host">Host, that was finded.</param>
-        private void HostFinded(string host)
+        private void HostFinded(HostData host)
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
                 string time = "";
+                string os = "";
                 var alreadyScannedResults = _cache.GetCache().Chuncks
-                    .Where(chunck => chunck.Host == host).ToArray();
+                    .Where(chunck => chunck.Host == host.Host).ToArray();
 
                 if (alreadyScannedResults.Length > 0)
                 {
@@ -85,8 +87,9 @@ namespace Looto.Views
                 HostInfo component = new HostInfo()
                 {
                     IsDarker = _isDarkerComponent,
-                    HostText = host,
+                    HostText = host.Host,
                     TimeText = time,
+                    OSText = host.OS,
                     HostApplied = HostApplied,
                 };
                 ResultsPanel.Children.Add(component);
