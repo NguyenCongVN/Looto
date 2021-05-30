@@ -7,6 +7,9 @@ Looto - multi-thread port scanner with powerful user-friendly GUI. Port scanning
 <br/>
 <br/>
 
+## requirements
+Nmap installed and added to your path
+
 ## ⚡ Interface
 
 ### 💻 Main window
@@ -32,6 +35,8 @@ After scanning you will see the scan result, turn on or turn off several port st
 
 ### 🔍 LAN List
 Scan your local network and get all devices IP in LAN. For convenience you can copy IP address from list to scan window with "Apply" button. Also it shows how long you scan any hosts.
+
+Check host's OS type with Nmap
 <img src="./README_RESOURCES/IM_7.png" style="display: block;margin-left: auto;margin-right: auto;">
 
 ---
